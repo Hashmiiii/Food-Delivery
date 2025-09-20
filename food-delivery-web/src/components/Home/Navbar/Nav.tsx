@@ -1,10 +1,16 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { MdDeliveryDining } from 'react-icons/md'
+import { CgMenu } from "react-icons/cg";  // ✅ Import hamburger icon
 import { Navlinks } from '../../../../constant/constants'
 import Link from 'next/link'
+import ThemeToggler from '@/components/Helper/ThemeToggler';
 
-const Nav = () => {
+type Props={
+    openNav:()=>void;
+}
+
+const Nav = ({openNav}:Props) => {
     const [navBg, setNaBag]=useState(false);
     useEffect(()=>{
         const handler =()=>{
@@ -56,6 +62,13 @@ const Nav = () => {
                     Join Now
                 </button>
             </div>
+            <ThemeToggler/>
+
+            {/* ✅ Hamburger menu (only visible on mobile) */}
+          <CgMenu
+            onClick={openNav}
+            className="lg:hidden w-8 h-8 text-black cursor-pointer"
+          />
 
         </div>
     </div>
