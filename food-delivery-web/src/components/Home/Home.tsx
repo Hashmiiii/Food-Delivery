@@ -1,8 +1,11 @@
 import React from 'react'
+import Hero from './Hero/Hero'
 
 const Home = () => {
   return (
-    <div className='hidden-overflow'>Home</div>
+    <div className='hidden-overflow'>
+        <Hero/>
+    </div>
   )
 }
 
